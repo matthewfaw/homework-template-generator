@@ -1,0 +1,31 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mfhw}[2020/01/25 Homework Style Sheet]
+ 
+\RequirePackage[margin=1in]{geometry}
+\RequirePackage[utf8]{inputenc} % allow utf-8 input
+\RequirePackage[T1]{fontenc}    % use 8-bit T1 fonts
+\RequirePackage{url}            % simple URL typesetting
+\RequirePackage{amsfonts,amsmath,amsthm,amssymb}       % blackboard math symbols
+\RequirePackage{nicefrac}       % compact symbols for 1/2, etc.
+\RequirePackage{tcolorbox} % Colored boxes around text
+\RequirePackage{dsfont} % For blackboard 1
+\RequirePackage{graphicx} % For including figures
+\RequirePackage{fancyhdr} % Fancy page style
+\RequirePackage{datetime} % to display time
+
+\newcommand*{\<}{\langle}
+\renewcommand*{\>}{\rangle}
+\newcommand*{\1}{\mathds{1}}
+\newcommand*{\0}{\boldsymbol{0}}
+\newcommand*{\PP}{\mathbb{P}}
+\newcommand*{\RR}{\mathbb{R}}
+
+\settimeformat{ampmtime}
+
+\newtheorem{exercise}{Exercise}[section]
+
+\newenvironment{solution}
+  {\begin{proof}[Solution]~\\}
+  {\end{proof}}
+
+\endinput
