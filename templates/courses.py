@@ -54,6 +54,12 @@ courses = {
                         "COURSE_NAME": "Markov Chains and Mixing Times",
                         "INSTRUCTOR_NAMES": "Joe Neeman"
                         },
+                    "stat": {
+                        "COURSE_NUMBER": "SDS 384-11",
+                        "COURSE_NAME": "Theoretical Statistics",
+                        "INSTRUCTOR_NAMES": "Purnamrita Sarkar",
+                        "ANONYMOUS": True,
+                        },
                     }
                 },
             }
