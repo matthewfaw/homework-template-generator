@@ -64,10 +64,12 @@ def create_hw_template(template_file, semester, course_id, pset_number, due_date
                         +"{}\\\\".format(collaborators) if collaborators != "" else ""
                 })
 
-def create_paper_template(template_file, title):
+def create_paper_template(template_file, title, output_file_name):
     create_template(template_file=template_file,
-            output_file_name=title,
-            replace_dict={"<TITLE>": title})
+            output_file_name=output_file_name,
+            replace_dict={"<TITLE>": title,
+                "<FNAME>": output_file_name
+                })
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Create a template")
@@ -112,12 +114,14 @@ if __name__ == '__main__':
             sys.exit(1)
     elif args.generate_paper:
         print("Creating paper titled {}".format(args.title))
+        output_file_name = re.sub('[\ :]', '-', args.title).lower()
         create_paper_template(template_file="research-template.tex",
-                title=args.title)
-        copy_file("research-template.sty", new_name=args.title)
+                title=args.title,
+                output_file_name=output_file_name)
+        copy_file("research-template.sty", new_name=output_file_name)
         copy_file("abstract.tex")
         copy_file("body.tex")
-        copy_file("research-template.bib", new_name=args.title)
+        copy_file("research-template.bib", new_name=output_file_name)
         copy_file("appendix.tex")
     else:
         print("No function specified -- cannot proceed")
