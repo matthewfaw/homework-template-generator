@@ -1,0 +1,133 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{MixnMatch}[2020/01/07 MixnMatch Custom Package]
+
+% Packages
+%\usepackage{todonotes} %commenting
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{url}            % simple URL typesetting
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{amsmath, amsthm}
+%\usepackage{tcolorbox} % Colored boxes around text
+\usepackage{dsfont}
+% \usepackage{stackrel}
+\usepackage{enumerate,enumitem}
+%\usepackage{xcolor}
+% Recommended, but optional, packages for figures and better typesetting:
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subcaption}
+%\usepackage{subfigure}
+\usepackage{booktabs} % for professional tables
+% hyperref makes hyperlinks in the resulting PDF.
+\usepackage{hyperref}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+
+% Put all citations in parens by default
+\renewcommand*{\cite}[1]{\citep{#1}}
+
+% Some useful shortcuts
+\renewcommand{\aa}{\boldsymbol{\alpha}}
+\newcommand*{\xx}{\boldsymbol{x}}
+\newcommand*{\uu}{\boldsymbol{u}}
+\newcommand{\bb}{\boldsymbol{w}}
+\newcommand{\ww}{\boldsymbol{w}}
+\renewcommand{\ll}{\boldsymbol{\lambda}}
+\newcommand{\1}{\mathds{1}}
+\newcommand{\0}{\boldsymbol{0}}
+\renewcommand{\L}{\mathcal{L}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\PP}{\mathbb{P}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\XX}{\mathcal{X}}
+\newcommand{\ZZ}{\mathcal{X}}
+\newcommand{\NN}{\mathcal{N}}
+\newcommand{\GG}{\mathcal{G}_*}
+\newcommand{\TT}{\mathcal{T}}
+\renewcommand{\AA}{\triangle}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand*{\pp}[1]{p^{(#1)}}
+\newcommand*{\pte}{\pp{te}}
+\newcommand*{\pa}{\pp{\aa}}
+\newcommand*{\pas}{\pp{\aa^*}}
+\newcommand*{\F}[1]{F^{(#1)}}
+\newcommand*{\Fte}{\F{te}}
+\newcommand*{\Fa}{\F{\aa}}
+\newcommand*{\Fas}{\F{\aa^*}}
+\newcommand*{\DD}{\mathcal{D}}
+\newcommand*{\Dte}{\DD_{te}}
+\newcommand{\<}{\langle}
+\renewcommand{\>}{\rangle}
+\newcommand{\st}{\text{s.t. }}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+% \newcommand{\eval}{{\sf ExpandNode }\xspace}
+% \newcommand{\match}{{\sf Mix\&Match }\xspace}
+\newcommand{\eval}{{\sf ExpandNode}}
+\newcommand{\match}{{\sf Mix\&Match}}
+
+
+% Algorithm environment mods
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Initialize:}}
+\newcommand{\algorithmautorefname}{Algorithm}
+
+\usepackage{mathtools}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+% Defs, Thms, ect.
+\newtheorem{definition}{Definition}
+\newcommand{\definitionautorefname}{Definition}
+\newtheorem{theorem}{Theorem}
+%\newcommand{\theoremautorefname}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newcommand{\lemmaautorefname}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newcommand{\corollaryautorefname}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newcommand{\propositionautorefname}{Proposition}
+\newtheorem{remark}{Remark}
+\newcommand{\remarkautorefname}{Remark}
+\newtheorem{problem}{Problem}
+\newcommand{\problemautorefname}{Problem}
+\newtheorem{conjecture}{Conjecture}
+\newcommand{\conjectureautorefname}{Conjecture}
+\newtheorem{assumption}{Assumption}
+\newcommand{\assumptionautorefname}{Assumption}
+\newtheorem{condition}{Condition}
+\newcommand{\conditionautorefname}{Condition}
+
+\renewcommand{\sectionautorefname}{Section}
+%\newcommand{\subfigureautorefname}{Figure}
+
+
+% Restate a Thm, and use same number as was used in original statement
+\makeatletter
+\newtheorem*{rep@theorem}{\rep@title}
+\newcommand{\newreptheorem}[2]{%
+\newenvironment{rep#1}[1]{%
+ \def\rep@title{#2 \ref{##1}}%
+ \begin{rep@theorem}}%
+ {\end{rep@theorem}}}
+\makeatother
+
+\newreptheorem{theorem}{Theorem}
+\newreptheorem{proposition}{Proposition}
+\newreptheorem{remark}{Remark}
+\newreptheorem{assumption}{Assumption}
+
+% \usepackage{titlesec}
+% \titlespacing*{\section}{0pt}{0.5\baselineskip}{\baselineskip}
+% \titlespacing*{\subsection}{0pt}{0.5\baselineskip}{\baselineskip}
+
+\endinput

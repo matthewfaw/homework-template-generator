@@ -1,0 +1,44 @@
+\documentclass[letter,oneside]{article}
+\usepackage[margin=1.0in]{geometry}
+
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{xcolor}
+
+% Attempt to make hyperref and algorithmic work together better:
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage{<TITLE>}
+
+\title{<TITLE>}
+\author{
+Matthew Faw\thanks{University of Texas at Austin \dotfill
+    \texttt{matthewfaw@utexas.edu}}
+}
+
+\begin{document}
+
+
+\maketitle
+
+\input{abstract}
+
+\newpage
+\tableofcontents
+\newpage
+
+\input{body}
+
+%Once entries are added, remove the % below to enable bibliograpy
+%\bibliography{<TITLE>}
+
+\clearpage
+
+\appendix
+
+\input{appendix}
+
+\end{document}
